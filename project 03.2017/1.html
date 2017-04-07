@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Calcs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+body
+ {
+     background-image: url(images/calcsbac.jpg);
+     background-repeat: no-repeat;
+	 background-size: 100%;
+	 background-attachment: fixed;
+ }
+</style>
+ <body>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.homepage.html">BBeast</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="motivationFeed.html">MotivationFeed</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="1.html">Calcs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<table align="center">
+	<tr>
+		<td>
+			<div>
+				Enter your weight(kg): <input type="text" id="weight"/>
+			</div>
+			<div>
+				Enter your height(cm): <input type="text" id="height"/>
+			</div>
+			<div>
+				<button onclick="calculate()">Submit</button>
+			</div>
+			<div id="result"></div>
+		</td>
+		<td>
+		<div>Enter your weight(kg): <input type="text" id="weight1"/></div>
+		<div>Enter your height(cm): <input type="text" id="height1"/></div>
+		<div>Enter your age: <input type="text" id="age"/></div>
+		<div>What is your gender: Male <input type="radio" name="gender"/> Female <input type="radio" name="gender"/></div>
+		<div><button onclick="calc()">Submit</button></div>
+		<div id="resultt"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/BMI.jpg" style="width:400px;height:250px;"/>
+		</td>
+		<td>
+			<img src="images/BMR.jpg" style="width:400px;height:250px;"/>
+		</td>
+	</tr>
+</table>
+<script>
+	function calculate()
+	{
+		var w = document.getElementById("weight").value;
+		var h = document.getElementById("height").value;
+		var bmi = (w/h)/h;
+		document.getElementById("result").innerHTML = "Your BMI is: " + bmi;
+	}
+	function calc()
+	{
+		var w1 = document.getElementById("weight1").value;
+		var h1 = document.getElementById("height1").value;
+		var a = document.getElementById("age").value;
+		var g = document.getElementsByName("gender");
+		if(g[0].checked == true) 
+		{
+			var bmr = 66.47+(13.75*w1)+(5*h1)-(6.75*a);
+		}
+		else if(g[1].checked == true)
+		{
+			var bmr = 665.09+(9.56*w1)+(1.84*h1)-(4.67*a);
+		}
+		document.getElementById("resultt").innerHTML = "Your BMR is: " + bmr;
+	}
+</script>
+<footer class="container-fluid text-center">
+	<a href="https://www.facebook.com/Be-a-Beast-584350795102559/" class="fa fa-facebook"></a>
+	<a href="https://twitter.com/BBeastForever" class="fa fa-twitter"></a>
+	<a href="https://www.youtube.com/channel/UCWfCOsdx3r3vwy_NSac8BGA" class="fa fa-youtube"></a>
+</footer>
+ 
+ 
+ </body>
+ </html>
